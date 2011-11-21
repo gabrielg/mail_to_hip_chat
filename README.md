@@ -32,12 +32,14 @@ You will need an account on Heroku and admin access to your HipChat group.
         $ echo 'source "http://rubygems.org"' >> Gemfile
         $ echo 'gem "mail_to_hip_chat"' >> Gemfile
         $ bundle install
-        $ git commit -a -m "Getting down with bundler"
+        $ git add Gemfile Gemfile.lock
+        $ git commit -m "Getting down with bundler"
     
 3. Copy over the default config.ru.
 
         $ cp "`bundle show mail_to_hip_chat`/support/config.ru" .
-        $ git commit -a -m "Adding default config.ru"
+        $ git add config.ru
+        $ git commit -m "Adding default config.ru"
 
 4. Set up a new Heroku application with CloudMailIn and Piggyback SSL.
   

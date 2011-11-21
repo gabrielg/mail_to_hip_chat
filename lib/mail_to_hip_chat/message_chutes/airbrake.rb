@@ -3,8 +3,13 @@ require "mustache"
 
 module MailToHipChat
   module MessageChutes
+    # Takes exception notification emails from Airbrake and sends them to the configured HipChat rooms.
     class Airbrake
       include MessageChute
+      
+      def initialize(opts)
+        initialize_hipchat_opts(opts)
+      end
       
       def call(params)
         return false unless process_message(params["plain"])

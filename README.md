@@ -81,12 +81,27 @@ You will need an account on Heroku and admin access to your HipChat group.
 
 ## Hooking it up to Airbrake
 
-  Just add a new user to your project, set their email address to `CLOUDMAILIN_FORWARD_ADDRESS`, and watch the exceptions roll in. Then turn your face from God and weep in abject horror.
+Just add a new user to your project, set their email address to `CLOUDMAILIN_FORWARD_ADDRESS`, and watch the exceptions roll in. Then turn your face from God and weep in abject horror.
 
 ## Adding new message handlers
 
+See the included Airbrake handler for an example. Really, any object that has a `call` method that takes one argument can be used.
+
 ## FAQ
 
+* Can I use something besides CloudMailIn/Heroku?
+  
+    Most likely, yes. The code has only been tested using CloudMailIn and Heroku, but really, there's not that much tying it to that particular kind of setup, besides the CloudMailIn signature verification stuff in the Rack app.
+    
+* Could I say, feed it email using a `.forward` file?
+
+    Probably. The only part dependent on actually being a web app is the Rack application itself.
+    
+* How do your projects end up with such rad ASCII art?
+
+        $ figlist | xargs -I {} /bin/bash -c "figlet -f {} your_project_name"
+        $ open "http://google.com/search?q=something_related_to_your_project+ascii+art"
+        
 ## TODO
 
 * There are too many steps for initial setup. This needs to be cut down.

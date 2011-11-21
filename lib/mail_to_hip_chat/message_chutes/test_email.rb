@@ -3,8 +3,14 @@ require "mustache"
 
 module MailToHipChat
   module MessageChutes
+    # Takes a test email and sends it to the configured HipChat rooms, to verify a deployment based on this library
+    # is working.
     class TestEmail
       include MessageChute
+      
+      def initialize(opts)
+        initialize_hipchat_opts(opts)
+      end
       
       def call(params)
         return false unless params["subject"] =~ /testing setup/i

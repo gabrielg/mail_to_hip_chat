@@ -4,7 +4,11 @@ require "mail_to_hip_chat/message_chute"
 class MessageChuteTest < Test::Unit::TestCase
   class TestMessageChute
     include MailToHipChat::MessageChute
-   
+    
+    def initialize(opts)
+      initialize_hipchat_opts(opts)
+    end
+    
     def call(params) 
       message_rooms(params[:sender], params[:message])
     end

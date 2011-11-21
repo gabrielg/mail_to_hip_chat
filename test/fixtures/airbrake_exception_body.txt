@@ -1,0 +1,27 @@
+
+
+Project: Echelon
+Environment: Staging
+
+
+http://the-nsa.airbrake.io/errors/11082122
+
+Error Message:
+--------------
+AirbrakeTestingException: Testing airbrake via "rake airbrake:test". If you can see this, it works.
+
+Where:
+------
+application#verify
+[PROJECT_ROOT]/vendor/bundle/ruby/1.9.1/gems/activesupport-3.1.0/lib/active_support/callbacks.rb, line 412
+
+URL:
+----
+http://example.org/verify
+
+Backtrace Summary:
+------------------
+[PROJECT_ROOT]/lib/sha1_unhasher.rb:13:in `block in _call'
+[PROJECT_ROOT]/lib/sha1_unhasher.rb.rb:12:in `_call'
+[PROJECT_ROOT]/lib/sha1_unhasher.rb.rb:7:in `call'
+

@@ -1,0 +1,89 @@
+POST / HTTP/1.1
+user-agent: CloudMailin Server
+content-type: multipart/form-data; boundary=----cloudmailinboundry
+content-length: 2827
+connection: close
+host: vgwb.showoff.io
+x-forwarded-for: undefined
+
+------cloudmailinboundry
+Content-Disposition: form-data; name="to"
+
+<16fefd79fee99cc47215@cloudmailin.net>
+------cloudmailinboundry
+Content-Disposition: form-data; name="disposable"
+
+
+------cloudmailinboundry
+Content-Disposition: form-data; name="from"
+
+gabrielg.test@example.com
+------cloudmailinboundry
+Content-Disposition: form-data; name="subject"
+
+This is a test email to CloudMailIn
+------cloudmailinboundry
+Content-Disposition: form-data; name="message"
+
+Received: by ggnr4 with SMTP id r4so955040ggn.3
+        for <16fefd79fee99cc47215@cloudmailin.net>; Wed, 09 Nov 2011 21:15:19 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=gamma;
+        h=from:content-type:content-transfer-encoding:subject:date:message-id
+         :to:mime-version:x-mailer;
+        bh=A9jPqHVi05+rBptC4qDZ74YQYcYcOvVD/GoK4riS6zk=;
+        b=sNFTGMEfly/MtKvlbsc0RqIzfVmi7eGjwFfFxJV2NhTt05dQbUNEtiNqfi7ohezG1A
+         DCMVszc7qw0NtJv37Qgn5C8bjJIdR+fcR66lRVCDO/6uf4JymKupXPyw9B2bWjW7chgn
+         yHgcQtMtx4XUloNgxI9Q0U8Ent+JH1NkM34js=
+Received: by 10.100.123.10 with SMTP id v10mr2641390anc.168.1320902119413;
+        Wed, 09 Nov 2011 21:15:19 -0800 (PST)
+Return-Path: <gabrielg.test@example.com>
+Received: from [10.0.1.54] (200-111-223-122.c3-0.mct-ubr1.chi-mct.il.cable.rcn.com. [200.111.223.122])
+        by mx.google.com with ESMTPS id l27sm20556805ani.21.2011.11.09.21.15.17
+        (version=SSLv3 cipher=OTHER);
+        Wed, 09 Nov 2011 21:15:18 -0800 (PST)
+From: Gabriel Gironda <gabrielg.test@example.com>
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Subject: This is a test email to CloudMailIn
+Date: Wed, 9 Nov 2011 23:15:16 -0600
+Message-Id: <61277AE7-938D-43CA-80CC-86AB47890FCE@gmail.com>
+To: 16fefd79fee99cc47215@cloudmailin.net
+Mime-Version: 1.0 (Apple Message framework v1251.1)
+X-Mailer: Apple Mail (2.1251.1)
+
+This is the body of the test email.
+
+------cloudmailinboundry
+Content-Disposition: form-data; name="plain"
+
+This is the body of the test email.
+------cloudmailinboundry
+Content-Disposition: form-data; name="html"
+
+
+------cloudmailinboundry
+Content-Disposition: form-data; name="mid"
+
+61277AE7-938D-43CA-80CC-86AB47890FCE@gmail.com
+------cloudmailinboundry
+Content-Disposition: form-data; name="x_to_header"
+
+["16fefd79fee99cc47215@cloudmailin.net"]
+------cloudmailinboundry
+Content-Disposition: form-data; name="x_cc_header"
+
+
+------cloudmailinboundry
+Content-Disposition: form-data; name="helo_domain"
+
+mail-gx0-f172.google.com
+------cloudmailinboundry
+Content-Disposition: form-data; name="return_path"
+
+gabrielg.test@example.com
+------cloudmailinboundry
+Content-Disposition: form-data; name="signature"
+
+a6fc5b4ab888ead36ea00aa430ad310a
+------cloudmailinboundry--

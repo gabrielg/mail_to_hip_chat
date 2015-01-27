@@ -41,11 +41,10 @@ You will need an account on Heroku and admin access to your HipChat group.
         $ git add config.ru
         $ git commit -m "Adding default config.ru"
 
-4. Set up a new Heroku application with CloudMailIn and Piggyback SSL.
+4. Set up a new Heroku application with CloudMailIn.
   
         $ heroku create --stack cedar
         $ heroku addons:add cloudmailin
-        $ heroku addons:add ssl:piggyback
 
 5. Setup the CloudMailIn target address to point at your app.
     

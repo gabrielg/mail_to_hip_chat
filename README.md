@@ -74,7 +74,7 @@ You will need an account on Heroku and admin access to your HipChat group.
     
 8. Get your CloudMailIn forwarding address and send a test email.
 
-        $ heroku config --long | grep CLOUDMAILIN_FORWARD_ADDRESS
+        $ heroku config | grep CLOUDMAILIN_FORWARD_ADDRESS
     
     Send an email to the `CLOUDMAILIN_FORWARD_ADDRESS`, with a subject of "Testing Setup". The message should appear in the rooms you've configured Mail To HipChat to send messages to.
 

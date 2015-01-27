@@ -41,17 +41,16 @@ You will need an account on Heroku and admin access to your HipChat group.
         $ git add config.ru
         $ git commit -m "Adding default config.ru"
 
-4. Set up a new Heroku application with CloudMailIn and Piggyback SSL.
+4. Set up a new Heroku application with CloudMailIn.
   
         $ heroku create --stack cedar
         $ heroku addons:add cloudmailin
-        $ heroku addons:add ssl:piggyback
 
 5. Setup the CloudMailIn target address to point at your app.
     
     Get the target address for CloudMailIn to hit when it receives an email.
     
-        $ echo "`heroku info -r | grep web_url | cut -d '=' -f 2 | sed 's/^http/https/'`notifications/create"
+        $ echo "`heroku apps:info | grep "Web URL" | cut -c9- | tr -d ' ' | awk '{print $1"notifications/create"}'`"
     
     Get your CloudMailIn username and password from the Heroku app config.
     
@@ -75,7 +74,7 @@ You will need an account on Heroku and admin access to your HipChat group.
     
 8. Get your CloudMailIn forwarding address and send a test email.
 
-        $ heroku config --long | grep CLOUDMAILIN_FORWARD_ADDRESS
+        $ heroku config | grep CLOUDMAILIN_FORWARD_ADDRESS
     
     Send an email to the `CLOUDMAILIN_FORWARD_ADDRESS`, with a subject of "Testing Setup". The message should appear in the rooms you've configured Mail To HipChat to send messages to.
 

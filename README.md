@@ -50,7 +50,7 @@ You will need an account on Heroku and admin access to your HipChat group.
     
     Get the target address for CloudMailIn to hit when it receives an email.
     
-        $ echo "`heroku info -r | grep web_url | cut -d '=' -f 2 | sed 's/^http/https/'`notifications/create"
+        $ echo "`heroku apps:info | grep "Web URL" | cut -c9- | tr -d ' ' | awk '{print $1"notifications/create"}'`"
     
     Get your CloudMailIn username and password from the Heroku app config.
     
